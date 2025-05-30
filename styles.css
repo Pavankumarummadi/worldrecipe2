@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(to right, #fef9f6, #fff2ec);
+  background-attachment: fixed;
+  background-size: cover;
+  color: #333;
+}
+
+header {
+  background-color: #ff6f61;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+  color: #ff6f61;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Grid Layout - fixed 3 columns */
+/* Grid Layout - center aligned, fixed width */
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* Recipe Card */
+.card {
+  background: white;
+  width: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h3 {
+  color: #ff6f61;
+  margin: 0 0 0.5rem;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 80%;
+  position: relative;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.modal:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #ff6f61;
+  cursor: pointer;
+}
